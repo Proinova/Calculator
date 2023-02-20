@@ -1,0 +1,12 @@
+p {
+color: #994d00;
+letter-spacing: 2px;
+text-indent: 185px;
+font-family: sans-serif;
+text-align: justify;
+}
+p.groove {border-style: groove;}
+canvas {
+border: 1px rgb(204, 255, 204);
+background-color: #ffcc66;
+}

@@ -7,12 +7,17 @@ let herox = 2;
 let heroy = 1;
 let heroimg = new Image();
 heroimg.src = "thinker_bell.jpg";
+let darvoimg = new Image();
+darvoimg.src = "1.png";
+
+
 canvas.width = nx * sqside;
 canvas.height = ny * sqside;
 
 function drawMap() {
 	context.clearRect(0, 0, canvas.width, canvas.height);
-	context.drawImage(heroimg, herox * sqside, heroy * sqside, 		sqside, sqside);
+	context.drawImage(heroimg, herox * sqside, heroy * sqside,	sqside, sqside);
+	context.drawImage(darvoimg, 2 * sqside, 3 * sqside,	sqside, sqside);
 	for (let i=0; i<nx; i++) {
 		for (let j=0; j<ny; j++) {
 			context.strokeRect(i*sqside, j*sqside, sqside, sqside);

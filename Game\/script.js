@@ -1,5 +1,15 @@
 let canvas = document.getElementById("gameCanvas");
 let context = canvas.getContext("2d");
+let vhod = document.getElementById("vhod").value;
+let words = vhod.split(" ");
+let masiv = ["qewr", 3, ["r"]];
+let obekt = {
+    ime: "Петър",
+    familiq: "Петров",
+    vazrast: 19
+}
+console.log(obekt.familiq);
+
 let nx = 8;
 let ny = 8;
 let sqside = 60;
@@ -9,7 +19,6 @@ let heroimg = new Image();
 heroimg.src = "thinker_bell.jpg";
 let darvoimg = new Image();
 darvoimg.src = "1.png";
-
 
 canvas.width = nx * sqside;
 canvas.height = ny * sqside;

@@ -2,14 +2,8 @@ let canvas = document.getElementById("gameCanvas");
 let context = canvas.getContext("2d");
 let vhod = document.getElementById("vhod").value;
 let words = vhod.split(" ");
-let masiv = ["qewr", 3, ["r"]];
-let obekt = {
-    ime: "Петър",
-    familiq: "Петров",
-    vazrast: 19
-}
-console.log(obekt.familiq);
 
+let ime = document.getElementById("ime");
 let nx = 8;
 let ny = 8;
 let sqside = 60;
@@ -19,14 +13,20 @@ let heroimg = new Image();
 heroimg.src = "thinker_bell.jpg";
 let darvoimg = new Image();
 darvoimg.src = "1.png";
+let prashecimg = new Image();
+prashecimg.src = "2.jpg";
 
 canvas.width = nx * sqside;
 canvas.height = ny * sqside;
+
+
+
 
 function drawMap() {
 	context.clearRect(0, 0, canvas.width, canvas.height);
 	context.drawImage(heroimg, herox * sqside, heroy * sqside,	sqside, sqside);
 	context.drawImage(darvoimg, 2 * sqside, 3 * sqside,	sqside, sqside);
+	context.drawImage(prashecimg, 3 * sqside, 2 * sqside,	sqside, sqside);
 	for (let i=0; i<nx; i++) {
 		for (let j=0; j<ny; j++) {
 			context.strokeRect(i*sqside, j*sqside, sqside, sqside);
@@ -69,12 +69,16 @@ function moveRight() {
 	}
 }
 
-function moveUp() {
+function moveUp() { 
 	if(heroy>0)
 	{
 	heroy = heroy - 1;
 	drawMap();
 	}
+	
+}
+function geroi() {
+    ime.innerHTML = (words[0]+ " " + words[2]);
 }
 document.onkeypress = function(e) { 
 		let key = e.key;
@@ -83,5 +87,6 @@ document.onkeypress = function(e) {
 			case "s": moveDown(); break;
 			case "d": moveRight(); break;
 			case "w": moveUp(); break;
+			case "i": geroi(); break;
 	}
 }
